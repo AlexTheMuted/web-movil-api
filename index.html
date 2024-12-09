@@ -4,37 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Precio de las CriptoMonedas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-    .container {
-      padding: 20px;
-    }
-    .crypto {
-      background: #fff;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .crypto h2 {
-      margin: 0 0 10px;
-    }
-    .crypto p {
-      margin: 5px 0;
-      color: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -43,44 +13,6 @@
   <div class="container" id="crypto-list">
     <p>Loading prices...</p>
   </div>
-
-  <script>
-    async function fetchCryptoPrices() {
-      const apiUrl = 'https://price-api.crypto.com/price/v1/tags';
-      const container = document.getElementById('crypto-list');
-
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('Error fetching the data.');
-
-        const data = await response.json();
-
-
-       
-        // Limpia el contenedor
-        container.innerHTML = '';
-
-        // Itera sobre las monedas y muestra la información
-        data.data.forEach(tag => {
-             console.log(tag);
-          const cryptoDiv = document.createElement('div');
-          cryptoDiv.className = 'crypto';
-          cryptoDiv.innerHTML = `
-            <h2>${tag.tag_name}</h2>
-            <p><strong>ID:</strong> ${tag.display_tag_code}</p>
-            <p><strong>Precio:</strong> €${tag.price_change_24h.toFixed(5)}</p>
-
-          `;
-          container.appendChild(cryptoDiv);
-        });
-      } catch (error) {
-        container.innerHTML = `<p>Error: ${error.message}</p>`;
-      }
-    }
-
-    // Llama a la función al cargar la página
-    fetchCryptoPrices();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
