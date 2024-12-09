@@ -10,12 +10,14 @@
   <header>
     <h1>Precio De Las CryptoMonedas</h1>
   </header>
-  <div class="container">
-    <button id="sort-button">Ordenar por precio</button>
-    <div id="crypto-list">
-      <p>Loading prices...</p>
+   <div class="container">
+    <div class="dropdown">
+      <button class="dropbtn">Filtrar</button>
+      <div class="dropdown-content">
+        <a href="#" onclick="filterByPrice('asc')">Menor precio</a>
+        <a href="#" onclick="filterByPrice('desc')">Mayor precio</a>
+      </div>
     </div>
-  </div>
   <script src="script.js"></script>
 </body>
 </html>
