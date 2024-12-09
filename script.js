@@ -58,3 +58,26 @@ document.getElementById('sort-button').addEventListener('click', sortByPrice);
 // Llama a la función al cargar la página
 fetchCryptoPrices();
 
+document.addEventListener('DOMContentLoaded', () => {
+  function filterByPrice(order) {
+    const cryptoList = document.getElementById('crypto-list');
+    const cryptos = Array.from(cryptoList.getElementsByClassName('crypto'));
+
+    cryptos.sort((a, b) => {
+      const priceA = parseFloat(a.querySelector('p').innerText.replace('Precio: $', '').replace(',', ''));
+      const priceB = parseFloat(b.querySelector('p').innerText.replace('Precio: $', '').replace(',', ''));
+
+      return order === 'asc' ? priceA - priceB : priceB - priceA;
+    });
+
+    // Limpiar la lista y volver a agregar los elementos en el orden filtrado
+    cryptoList.innerHTML = '';
+    cryptos.forEach(crypto => cryptoList.appendChild(crypto));
+  }
+
+  // Agregar eventos a los enlaces del dropdown
+  document.querySelector('.dropdown-content a:nth-child(1)').addEventListener('click', () => filterByPrice('asc'));
+  document.querySelector('.dropdown-content a:nth-child(2)').addEventListener('click', () => filterByPrice('desc'));
+});
+
+
