@@ -35,21 +35,14 @@ function displayCryptoData(data) {
   });
 }
 
-// Función para ordenar las criptomonedas por precio y actualizar la vista
-function sortByPrice(order) {
-  const sortedData = [...cryptoData].sort((a, b) => {
-    return order === 'asc'
-      ? a.current_price - b.current_price
-      : b.current_price - a.current_price;
-  });
-
+// Función para ordenar las monedas por precio y actualizar la vista
+function sortByPrice() {
+  const sortedData = [...cryptoData].sort((a, b) => a.current_price - b.current_price);
   displayCryptoData(sortedData);
 }
 
-// Agregar eventos a los botones de ordenar
-document.addEventListener('DOMContentLoaded', () => {
-  fetchCryptoPrices(); // Obtener y mostrar las criptomonedas al cargar la página
+// Agregar el evento al botón de ordenar
+document.getElementById('sort-button').addEventListener('click', sortByPrice);
 
-  document.querySelector('.dropdown-content a:nth-child(1)').addEventListener('click', () => sortByPrice('asc'));
-  document.querySelector('.dropdown-content a:nth-child(2)').addEventListener('click', () => sortByPrice('desc'));
-});
+// Llama a la función al cargar la página
+fetchCryptoPrices();
