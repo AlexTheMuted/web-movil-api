@@ -36,9 +36,20 @@ function displayCryptoData(data) {
 }
 
 // Función para ordenar las monedas por precio y actualizar la vista
-function sortByPrice() {
-  const sortedData = [...cryptoData].sort((a, b) => a.current_price - b.current_price);
-  displayCryptoData(sortedData);
+function filterByPrice(order) {
+  const cryptoList = document.getElementById('crypto-list');
+  const cryptos = Array.from(cryptoList.getElementsByClassName('crypto'));
+
+  cryptos.sort((a, b) => {
+    const priceA = parseFloat(a.querySelector('p').innerText.replace('Precio: $', '').replace(',', ''));
+    const priceB = parseFloat(b.querySelector('p').innerText.replace('Precio: $', '').replace(',', ''));
+
+    return order === 'asc' ? priceA - priceB : priceB - priceA;
+  });
+
+  // Limpiar la lista y volver a agregar los elementos en el orden filtrado
+  cryptoList.innerHTML = '';
+  cryptos.forEach(crypto => cryptoList.appendChild(crypto));
 }
 
 // Agregar el evento al botón de ordenar
