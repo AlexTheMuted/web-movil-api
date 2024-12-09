@@ -16,20 +16,51 @@ header {
   padding: 20px;
 }
 
-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+.dropdown {
+  position: relative;
+  display: inline-block;
   margin-bottom: 20px;
 }
 
-button:hover {
+.dropbtn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropbtn:hover {
   background-color: #0056b3;
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f4f4f4;
+  min-width: 160px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #007bff;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e0e0e0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
 .crypto {
   background: #fff;
