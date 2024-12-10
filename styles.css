@@ -6,11 +6,21 @@ body {
 }
 
 header {
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
+    background-image: url('https://images.ctfassets.net/hzjmpv1aaorq/1f63MSbHAkTIdcLc8z4EBO/8beedc5a989b68446d719eec4b3829b9/Copy_of_Blog_Images_-_Skilling_-_2024-11-12T114651.539.jpg'); /* Ruta de la imagen que desees usar */
+    background-size: cover; /* Hace que la imagen cubra todo el espacio */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: black; /* Color del texto, puedes ajustarlo según el fondo */
+    padding: 50px 20px; /* Ajusta el espacio interno del header */
+    text-align: center; /* Centra el título */
+    width: 100%;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 36px; /* Tamaño de fuente del título */
+  }
+  
 
 .container {
   padding: 20px;
@@ -47,3 +57,173 @@ button:hover {
   margin: 5px 0;
   color: #555;
 }
+
+/* Estilo inicial del botón */
+.sort-dropdown {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    padding-right: 11px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out; /* Animación suave */
+  }
+  
+  /* Hover para el botón */
+  .sort-dropdown:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Efecto de agrandamiento suave al pasar el mouse */
+  }
+  
+  /* Focus (cuando el usuario hace clic en el botón) */
+  .sort-dropdown:focus {
+    outline: none;
+    background-color: #004085;
+    transform: scale(1.05); /* Efecto de agrandamiento cuando el botón está enfocado */
+  }
+  
+  /* Transición suave al abrir el dropdown */
+  .sort-dropdown:active {
+    transform: scale(1.1); /* Efecto de presión cuando se hace clic */
+  }
+  
+  
+  label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #333;
+  }
+  canvas {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+  }
+
+  /* Contenedor principal */
+#search-container {
+    margin-bottom: 20px;
+    text-align: center; /* Centrar la barra de búsqueda */
+    padding-right: -500px;
+    padding-left: 78%;
+    margin-top: -60px;
+  }
+  
+  /* Contenedor del campo de búsqueda */
+  .search-box {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 200px; /* Puedes ajustar el tamaño máximo */
+    transition: all 0.3s ease-in-out; /* Animación */
+  }
+  
+  /* Ícono de búsqueda */
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+    pointer-events: none;
+  }
+  
+  /* Campo de texto */
+  #search-bar {
+    width: 100%;
+    padding: 10px 10px 10px 40px; /* Espacio para el ícono */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* Animación */
+  }
+  
+  /* Efecto hover y focus */
+  #search-bar:hover, #search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+    outline: none;
+  }
+  
+  /* Ampliar la barra al hacer focus */
+  .search-box:focus-within {
+    max-width: 300px; /* Ampliar la barra */
+  }
+
+  footer {
+    position: fixed; /* Fija el footer en la parte inferior de la página */
+    bottom: 0; /* Asegura que quede en la parte inferior */
+    left: 0; /* Alinea el footer a la izquierda */
+    width: 100%; /* Hace que el footer ocupe todo el ancho de la pantalla */
+    background-color: #333; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 20px 0; /* Espaciado arriba y abajo */
+    text-align: center; /* Centrado del contenido */
+    z-index: 10; /* Asegura que el footer quede encima de otros elementos si hay superposición */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center; /* Alineación vertical */
+    padding: 0 20px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px; /* Espaciado entre los íconos */
+  }
+  
+  .social-icon {
+    color: white;
+    font-size: 24px;
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s ease; /* Transición suave */
+  }
+  
+  .social-icon:hover {
+    color: #e93df8; /* Cambiar color cuando se pasa el mouse */
+  }
+  
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .footer-links a:hover {
+    color: #007bff; /* Cambiar color cuando se pasa el mouse */
+  }
+  
+  /* Para pantallas más pequeñas, centrar todo en una sola columna */
+  @media screen and (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .social-icons {
+      margin-bottom: 10px; /* Espacio entre íconos y enlaces */
+    }
+  }
+
+  .crypto-logo {
+    width: 80px; /* Tamaño del logo */
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  
+  
+  
+  
+
+  
+  
+  
+  
