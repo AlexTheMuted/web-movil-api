@@ -4,19 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Precio de las CriptoMonedas</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>Precio De Las CryptoMonedas</h1>
   </header>
   <div class="container">
-    <button id="sort-button">Ordenar por precio</button>
+    <div>
+      <label for="sortOrder">Ordenar por precio:</label>
+      <select id="sortOrder" class="sort-dropdown">
+        <option value="desc">Mayor a Menor</option>
+        <option value="asc">Menor a Mayor</option>
+      </select> 
+    </div>
+    <div id="search-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i> <!-- Ícono de búsqueda -->
+          <input type="text" id="search-bar" placeholder="Buscar criptomoneda..." />
+        </div>
+      </div>  
     <div id="crypto-list">
+  
+  <div id="crypto-list">
+    <p>Loading prices...</p>
+  </div>
+  
       <p>Loading prices...</p>
     </div>
   </div>
+  <footer>
+    <div class="footer-content">
+      <div class="social-icons">
+        <a href="https://www.facebook.com/CryptoComOfficial/" target="_blank" class="social-icon">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com/CryptoCom" target="_blank" class="social-icon">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/cryptocomofficial/" target="_blank" class="social-icon">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/cryptocom/" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.crypto.com" target="_blank" class="crypto-link">
+          <img src="https://www.elconfidencialdigital.com/opiniones/wp-content/uploads/2023/06/crypto.com-logo.png" alt="Crypto.com Logo" class="crypto-logo">
+        </a>
+      </div>
+    </div>
+  </footer>
+  
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
-
