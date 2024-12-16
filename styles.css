@@ -102,56 +102,77 @@ button:hover {
     max-width: 100%;
   }
 
-  /* Contenedor principal */
+/* Contenedor principal */
 #search-container {
-    margin-bottom: 20px;
-    text-align: center; /* Centrar la barra de búsqueda */
-    padding-right: -500px;
-    padding-left: 78%;
-    margin-top: -60px;
+  margin-bottom: 20px;
+  text-align: center; /* Centrar la barra de búsqueda */
+  padding-right: 0; /* Eliminamos el padding extra */
+  padding-left: 0; /* Ajuste para móviles */
+  margin-top: 10px; /* Ajustamos el margen superior */
+}
+
+/* Contenedor del campo de búsqueda */
+.search-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px; /* Tamaño máximo ajustado */
+  transition: all 0.3s ease-in-out; /* Animación */
+  margin: 0 auto; /* Asegura centrado automático */
+}
+
+/* Ícono de búsqueda */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+  pointer-events: none;
+}
+
+/* Campo de texto */
+#search-bar {
+  width: 100%;
+  padding: 10px 10px 10px 40px; /* Espacio para el ícono */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out; /* Animación */
+}
+
+/* Efecto hover y focus */
+#search-bar:hover, #search-bar:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+/* Mejor ajuste para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  /* Contenedor de búsqueda ajustado */
+  #search-container {
+    margin-top: 20px; /* Espaciado adicional en móviles */
   }
-  
-  /* Contenedor del campo de búsqueda */
+
+  /* Redimensionar la barra */
   .search-box {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 200px; /* Puedes ajustar el tamaño máximo */
-    transition: all 0.3s ease-in-out; /* Animación */
+    max-width: 90%; /* Ocupa un 90% del ancho disponible */
   }
-  
-  /* Ícono de búsqueda */
-  .search-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #888;
-    pointer-events: none;
-  }
-  
-  /* Campo de texto */
+
+  /* Campo de texto ajustado */
   #search-bar {
-    width: 100%;
-    padding: 10px 10px 10px 40px; /* Espacio para el ícono */
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out; /* Animación */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    padding: 10px 10px 10px 35px; /* Padding ajustado */
   }
-  
-  /* Efecto hover y focus */
-  #search-bar:hover, #search-bar:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
-    outline: none;
+
+  /* Ícono más pequeño */
+  .search-icon {
+    left: 8px; /* Ajustar posición */
+    font-size: 16px; /* Reducir tamaño */
   }
-  
-  /* Ampliar la barra al hacer focus */
-  .search-box:focus-within {
-    max-width: 300px; /* Ampliar la barra */
-  }
+}
 
   footer {
     position: fixed; /* Fija el footer en la parte inferior de la página */
