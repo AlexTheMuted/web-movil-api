@@ -44,4 +44,4 @@ Funcionalidad en detalle:
   
   Ponte una nota del 1 al 10, explica por qué te la pones y qué crees que podrías mejorar.
 
-  Yo creo que me pondría un 9 ya que me ha costado mucho que el JSON no diese problemas, ya que la API de las crypto es limitada y aveces se quedaba colgada. También me costo encontrar una API que me implementase      los gráficos en tiempo real. Creo que podría mejorar en el entorno de las solicitudes de API de paginas de registro y con respuestas limitadas.
+  Yo creo que me pondría un 8 ya que me ha costado mucho que el JSON no diese problemas, ya que la API de las crypto es limitada y aveces se quedaba colgada. También me costo encontrar una API que me implementase      los gráficos en tiempo real. Creo que podría mejorar en el entorno de las solicitudes de API de paginas de registro y con respuestas limitadas.
